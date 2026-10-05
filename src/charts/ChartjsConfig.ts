@@ -28,3 +28,6 @@ Chart.register(
   Legend,
   Tooltip
 );
+
+Chart.defaults.font.family = "'Inter', sans-serif";
+Chart.defaults.color = '#9ca3af';
