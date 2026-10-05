@@ -2,11 +2,11 @@ import React from 'react';
 
 function DashboardCard10() {
   const customers = [
-    { name: 'Dominik McNeill', email: 'dominikmcneill@acme.com', avatar: 'DM', color: '#8470ff' },
-    { name: 'Ivan Mesaros', email: 'ivanmesaros@acme.com', avatar: 'IM', color: '#67bfff' },
-    { name: 'Maria Martinez', email: 'mariamartinez@acme.com', avatar: 'MM', color: '#3ec972' },
-    { name: 'Scott Robinson', email: 'scottrobinson@acme.com', avatar: 'SR', color: '#f0bb33' },
-    { name: 'Carolyn Jones', email: 'carolynjones@acme.com', avatar: 'CJ', color: '#ff5656' },
+    { name: 'Dominik McNeill', email: 'dominikmcneill@acme.com', avatar: 'DM', color: '#8470ff', status: 'Active', spent: '2,450.00' },
+    { name: 'Ivan Mesaros', email: 'ivanmesaros@acme.com', avatar: 'IM', color: '#67bfff', status: 'Pending', spent: '1,890.50' },
+    { name: 'Maria Martinez', email: 'mariamartinez@acme.com', avatar: 'MM', color: '#3ec972', status: 'Active', spent: '3,210.75' },
+    { name: 'Scott Robinson', email: 'scottrobinson@acme.com', avatar: 'SR', color: '#f0bb33', status: 'Pending', spent: '980.25' },
+    { name: 'Carolyn Jones', email: 'carolynjones@acme.com', avatar: 'CJ', color: '#ff5656', status: 'Active', spent: '4,120.00' },
   ];
 
   return (
@@ -37,12 +37,12 @@ function DashboardCard10() {
                   <td className="p-2"><div className="text-gray-500 dark:text-gray-400">{customer.email}</div></td>
                   <td className="p-2">
                     <div className="text-center">
-                      <span className={`inline-flex font-medium text-xs rounded-full px-2 py-0.5 ${i % 2 === 0 ? 'bg-green-500/20 text-green-700' : 'bg-yellow-500/20 text-yellow-700'}`}>
-                        {i % 2 === 0 ? 'Active' : 'Pending'}
+                      <span className={`inline-flex font-medium text-xs rounded-full px-2 py-0.5 ${customer.status === 'Active' ? 'bg-green-500/20 text-green-700' : 'bg-yellow-500/20 text-yellow-700'}`}>
+                        {customer.status}
                       </span>
                     </div>
                   </td>
-                  <td className="p-2"><div className="text-right text-gray-800 dark:text-gray-100">${(Math.random() * 5000 + 500).toFixed(2)}</div></td>
+                  <td className="p-2"><div className="text-right text-gray-800 dark:text-gray-100">${customer.spent}</div></td>
                 </tr>
               ))}
             </tbody>

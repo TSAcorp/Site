@@ -1,34 +1,8 @@
 import React from 'react';
-import LineChart01 from '../components/LineChart01';
+import MiniLineChart from './MiniLineChart';
 
 function DashboardCard03() {
-  const chartData = {
-    labels: ['12-01-2022', '01-01-2023', '02-01-2023', '03-01-2023', '04-01-2023', '05-01-2023', '06-01-2023', '07-01-2023', '08-01-2023', '09-01-2023', '10-01-2023', '11-01-2023', '12-01-2023', '01-01-2024', '02-01-2024', '03-01-2024', '04-01-2024', '05-01-2024', '06-01-2024', '07-01-2024', '08-01-2024', '09-01-2024', '10-01-2024', '11-01-2024', '12-01-2024', '01-01-2025'],
-    datasets: [
-      {
-        data: [540, 460, 480, 382, 420, 440, 390, 420, 460, 480, 520, 560, 580, 520, 480, 500, 460, 520, 540, 580, 620, 640, 620, 580, 560, 610],
-        fill: true,
-        backgroundColor: 'rgba(62, 201, 114, 0.1)',
-        borderColor: '#3ec972',
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 3,
-        pointBackgroundColor: '#3ec972',
-        clip: 20,
-        tension: 0.2,
-      },
-      {
-        data: [340, 380, 320, 314, 280, 260, 310, 340, 330, 290, 320, 380, 340, 314, 290, 340, 380, 420, 390, 360, 340, 380, 420, 390, 370, 350],
-        borderColor: 'rgba(107, 114, 128, 0.25)',
-        borderWidth: 2,
-        pointRadius: 0,
-        pointHoverRadius: 3,
-        pointBackgroundColor: 'rgba(107, 114, 128, 0.25)',
-        clip: 20,
-        tension: 0.2,
-      },
-    ],
-  };
+  const data = [540, 460, 480, 382, 420, 440, 390, 420, 460, 480, 520, 560, 580, 520, 480, 500, 460, 520, 540, 580, 620, 640, 620, 580, 560, 610];
 
   return (
     <div className="flex flex-col col-span-full sm:col-span-6 xl:col-span-4 bg-white dark:bg-gray-800 shadow-xs rounded-xl">
@@ -46,7 +20,7 @@ function DashboardCard03() {
         </div>
       </div>
       <div className="grow max-sm:max-h-[128px] xl:max-h-[128px]">
-        <LineChart01 data={chartData} width={389} height={128} />
+        <MiniLineChart data={data} color="#3ec972" height={128} />
       </div>
     </div>
   );
